@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/catsListFragment">
+
+    <fragment
+        android:id="@+id/catsListFragment"
+        android:name="com.example.navcomponents.CatsListFragment"
+        android:label="fragment_cats_list"
+        tools:layout="@layout/fragment_cats_list" >
+        <action
+            android:id="@+id/action_catsListFragment_to_catDetailFragment"
+            app:destination="@id/catDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catDetailFragment"
+        android:name="com.example.navcomponents.CatDetailFragment"
+        android:label="fragment_cat_detail"
+        tools:layout="@layout/fragment_cat_detail" >
+        <argument
+            android:name="errorTitle"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="imageUrl"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+</navigation>
